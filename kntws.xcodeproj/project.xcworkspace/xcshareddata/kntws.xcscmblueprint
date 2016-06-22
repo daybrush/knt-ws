@@ -1,13 +1,16 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C0E9019F322B963D7FF115E8C38D28144549881C",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C0E9019F322B963D7FF115E8C38D28144549881C" : 0,
     "FB950DA91696DB40601A43AFF1A56B2E39217374" : 0,
     "D8811CE32924E36E8903BAF4011407E4BAF64556" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B3E13F95-79CE-40FB-8D92-E41A74734514",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C0E9019F322B963D7FF115E8C38D28144549881C" : "knt-ws\/",
     "FB950DA91696DB40601A43AFF1A56B2E39217374" : "..\/..\/addons\/ofxLibwebsockets",
     "D8811CE32924E36E8903BAF4011407E4BAF64556" : "..\/..\/addons\/ofxOpenNI"
   },
@@ -15,6 +18,11 @@
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "kntws.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/daybrush\/knt-ws",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C0E9019F322B963D7FF115E8C38D28144549881C"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gameoverhack\/ofxOpenNI",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",

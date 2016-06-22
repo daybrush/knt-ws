@@ -36,13 +36,13 @@ void ofApp::draw(){
     ofSetColor(255, 255, 255);
     
     ofPushMatrix();
-    // draw debug (ie., image, depth, skeleton)
+//    // draw debug (ie., image, depth, skeleton)
     openNIDevice.drawDebug();
     ofPopMatrix();
-    
-    ofPushMatrix();
+//
+//    ofPushMatrix();
     // use a blend mode so we can see 'through' the mask(s)
-    ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+//    ofEnableBlendMode(OF_BLENDMODE_ALPHA);
     
     // get number of current users
     int numUsers = openNIDevice.getNumTrackedUsers();
@@ -55,10 +55,6 @@ void ofApp::draw(){
         // get a reference to this user
         ofxOpenNIUser & user = openNIDevice.getTrackedUser(i);
         user.drawMask();
-        
-        ofPushMatrix();
-        ofTranslate(320, 240, 10);
-        user.drawPointCloud();
         
         // you can also access the mesh:
         
@@ -75,8 +71,11 @@ void ofApp::draw(){
         ofxOpenNIJoint rightHand = user.getJoint(JOINT_RIGHT_HAND);
         ofxOpenNIJoint leftKnee = user.getJoint(JOINT_LEFT_KNEE);
         ofxOpenNIJoint rightKnee = user.getJoint(JOINT_RIGHT_KNEE);
+        ofxOpenNIJoint leftFoot = user.getJoint(JOINT_LEFT_FOOT);
+        ofxOpenNIJoint rightFoot = user.getJoint(JOINT_RIGHT_FOOT);
         ofxOpenNIJoint spine = user.getJoint(JOINT_TORSO);
-        
+        ofxOpenNIJoint leftShoulder = user.getJoint(JOINT_LEFT_SHOULDER);
+        ofxOpenNIJoint rightShoulder = user.getJoint(JOINT_RIGHT_SHOULDER);
         ofPoint leftHandPos = leftHand.getProjectivePosition();
         ofPoint rightHandPos = rightHand.getProjectivePosition();
         msg += JointToString("he", head);
@@ -88,17 +87,18 @@ void ofApp::draw(){
         msg += JointToString("lk", leftKnee);
         msg += JointToString("rk", rightKnee);
         msg += JointToString("sp", spine);
+        msg += JointToString("lf", leftFoot);
+        msg += JointToString("rf", rightFoot);
+        msg += JointToString("ls", rightFoot);
+        msg += JointToString("rs", rightFoot);
         
-        ofPushMatrix();
-        ofSetColor(200,0,0);
-        ofCircle(leftHandPos.x + 640,leftHandPos.y,30);
-        ofSetColor(0, 0, 200);
-        ofCircle(rightHandPos.x + 640, rightHandPos.y, 30);
-        ofPopMatrix();
+
         
         
         msg+= "\n";
     }
+    
+    server.sendMessage(msg);
     
     ofDisableBlendMode();
     ofPopMatrix();
